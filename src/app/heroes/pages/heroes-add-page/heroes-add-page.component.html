@@ -1,1 +1,48 @@
-<h1>heroes-add-page works!</h1>
+<div class="container mt-3" style="max-width: 600px; margin-left: 20px;">
+    <h2 style="font-size: 1.5rem;">Agregar héroe</h2>
+    <form>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-2">
+            <label for="superHero" class="form-label" style="font-size: 0.9rem;">Super héroe*</label>
+            <input type="text" class="form-control form-control-sm" id="superHero" placeholder="Nombre del superhéroe" required>
+          </div>
+        </div>
+  
+        <div class="col-md-6">
+          <div class="mb-2">
+            <label for="alterEgo" class="form-label" style="font-size: 0.9rem;">Alter ego*</label>
+            <input type="text" class="form-control form-control-sm" id="alterEgo" placeholder="Nombre del alter ego" required>
+          </div>
+        </div>
+      </div>
+  
+      <div class="mb-2">
+        <label for="firstAppearance" class="form-label" style="font-size: 0.9rem;">Primera aparición*</label>
+        <input type="text" class="form-control form-control-sm" id="firstAppearance" placeholder="Primera aparición del héroe" required>
+      </div>
+  
+      <div class="mb-2">
+        <label for="characters" class="form-label" style="font-size: 0.9rem;">Personajes*</label>
+        <input type="text" class="form-control form-control-sm" id="characters" placeholder="Personajes" required>
+      </div>
+  
+      <div class="mb-2">
+        <label for="creator" class="form-label" style="font-size: 0.9rem;">Creador*</label>
+        <select class="form-select form-select-sm" id="creator" required>
+          <option value="DC">DC - Comics</option>
+          <option value="Marvel">Marvel - Comics</option>
+        </select>
+      </div>
+  
+      <div class="mb-2">
+        <label for="altImage" class="form-label" style="font-size: 0.9rem;">Imagen Alternativa</label>
+        <input type="text" class="form-control form-control-sm" id="altImage" placeholder="URL de imagen alternativa">
+      </div>
+  
+      <button type="submit" class="btn btn-primary btn-sm">
+        <i class="bi bi-save me-2"></i> Guardar
+      </button>
+    </form>
+  </div>
+  
