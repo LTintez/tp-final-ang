@@ -1,1 +1,20 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-dark" style="background-color: #693AB6;">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" (click)="toggleSidebar()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="ms-auto">
+        <button class="btn btn-outline-light" type="button">
+          <i class="bi bi-box-arrow-right"></i> Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="sidebar" [class.active]="isSidebarOpen">
+    <ul class="list-group">
+      <li class="list-group-item" routerLink="list" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Listar Héroe</li>
+      <li class="list-group-item" routerLink="" routerLinkActive="active">Agregar Héroe</li>
+      <li class="list-group-item" routerLink="search" routerLinkActive="active">Buscar Héroe</li>
+    </ul>
+  </div>
