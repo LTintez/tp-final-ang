@@ -1,1 +1,15 @@
-<p>heroes-list-page works!</p>
+<section class="">
+    @if (data.length > 0) {
+    <div class="">
+        @for (d of data; track $index) {
+            <div class=>
+            {{d.name}}
+        </div>
+        }
+    </div>
+    } @else {
+    <p class="">
+        nada que mostrar      
+    </p>
+    }
+</section>

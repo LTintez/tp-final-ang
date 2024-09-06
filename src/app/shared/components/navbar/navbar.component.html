@@ -9,12 +9,11 @@
         </button>
       </div>
     </div>
-  </nav>
-  
+  </nav>  
   <div class="sidebar" [class.active]="isSidebarOpen">
     <ul class="list-group">
       <li class="list-group-item" routerLink="list" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Listar Héroe</li>
-      <li class="list-group-item" routerLink="" routerLinkActive="active">Agregar Héroe</li>
+      <li class="list-group-item" routerLink="add" routerLinkActive="active">Agregar Héroe</li>
       <li class="list-group-item" routerLink="search" routerLinkActive="active">Buscar Héroe</li>
     </ul>
   </div>

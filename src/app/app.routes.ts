@@ -10,7 +10,7 @@ export const routes: Routes = [
         component: HomePageComponent,
         children: [
             {
-                path: '',
+                path: 'add',
                 title: 'heroes-add',
                 component: HeroesAddPageComponent,
             },
