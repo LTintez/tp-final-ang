@@ -11,17 +11,17 @@ export const routes: Routes = [
         children: [
             {
                 path: 'add',
-                title: 'heroes-add',
+                title: 'Agregar Héroes',
                 component: HeroesAddPageComponent,
             },
             {
                 path: 'list',
-                title: 'heroes-list',
+                title: 'Listar Héroes',
                 component: HeroesListPageComponent,
             },
             {
                 path: 'search',
-                title: 'heroes-search',
+                title: 'Buscar Héroes',
                 component: HeroesSearchPageComponent,
             },
         ],
