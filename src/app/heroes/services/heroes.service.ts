@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class HeroesService {
 
-  private jsonUrl = 'assets/data.json'; 
+  private apiUrl = 'http://localhost:3000/heroes'; 
 
   constructor(private http: HttpClient) { }
 
   getData(): Observable<any> {
-    return this.http.get<any>(this.jsonUrl);
+    return this.http.get<any>(this.apiUrl);
   }
 }
