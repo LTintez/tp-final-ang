@@ -10,18 +10,21 @@
     </mat-form-field>
   </div>
 
-  @if (filteredHeroes.length === 0) {
-    <div style="margin-top: 16px;">
-      <p>No se encontraron héroes.</p>
-    </div>
-  } @else {
-    <div style="margin-top: 16px;">
-      <mat-list>
-        @for (hero of filteredHeroes; track hero) {
-          <mat-list-item>
-            {{ hero.superHero }} ({{ hero.alterEgo }})
-          </mat-list-item>
-        }
-      </mat-list>
-    </div>}
+  @if (searchTerm && searchTerm.trim() !== '') {
+    @if (filteredHeroes.length === 0) {
+      <div style="margin-top: 16px;">
+        <p>No se encontraron héroes.</p>
+      </div>
+    } @else {
+      <div style="margin-top: 16px;">
+        <mat-list>
+          @for (hero of filteredHeroes; track hero) {
+            <mat-list-item>
+              {{ hero.superHero }} ({{ hero.alterEgo }})
+            </mat-list-item>
+          }
+        </mat-list>
+      </div>
+    }
+  }
 </div>
