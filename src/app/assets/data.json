@@ -1,12 +1,20 @@
 [
-    {
-      "id": 1,
-      "name": "John Doe",
-      "email": "john.doe@example.com"
-    },
-    {
-      "id": 2,
-      "name": "Jane Smith",
-      "email": "jane.smith@example.com"
-    }
-  ]
+  {
+    "id" : "1",
+    "superHero": "Superman",
+    "alterEgo": "Clark Kent",
+    "firstAppearance": "Action Comics #1",
+    "characters": "Lois Lane, Lex Luthor",
+    "creator": "DC",
+    "altImage": "https://example.com/superman.jpg"
+  },
+  {
+    "id" : "2",
+    "superHero": "Spider-Man",
+    "alterEgo": "Peter Parker",
+    "firstAppearance": "Amazing Fantasy #15",
+    "characters": "Mary Jane Watson, Green Goblin",
+    "creator": "Marvel",
+    "altImage": "https://example.com/spiderman.jpg"
+  }
+]

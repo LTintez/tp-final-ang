@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
@@ -6,6 +6,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginService } from '../../../heroes/services/login.service';
+import * as userData from '../../../assets/users.json';
 
 @Component({
   selector: 'app-login',
@@ -20,8 +22,14 @@ import { ReactiveFormsModule } from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
-  loginForm: FormGroup;
+export class LoginComponent implements OnInit {
+  users: any = [];
+  loginForm: FormGroup;  
+
+  ngOnInit(): void {
+    this.users = (userData as any).default;
+    console.log(this.users); 
+  }
 
   constructor(private fb: FormBuilder, private router: Router) {
     this.loginForm = this.fb.group({
@@ -40,8 +48,16 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      // Aquí iría la lógica para manejar el inicio de sesión
-      console.log('Formulario enviado:', this.loginForm.value);
+      const { email, password } = this.loginForm.value;
+      const user = this.users.find((u: any) => u.email === email && u.password === password);
+      
+      if (user) {
+        console.log('Inicio de sesión exitoso');
+        this.router.navigate(['/home']);
+      } else {
+        console.log('Credenciales incorrectas');
+        alert('Correo o contraseña incorrectos');
+      }
     }
   }
 

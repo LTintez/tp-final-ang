@@ -1,13 +1,27 @@
 <div class="container mt-3">
-    <h2 mat-typography class="mat-h2" style="font-size: 2rem;">
-      Buscador de Héroes
-    </h2>
-  
-    <div style="margin-top: 16px;">
-      <mat-form-field appearance="fill" style="width: 100%;">
-        <mat-label>Buscador de Héroes</mat-label>
-        <input matInput placeholder="Ingresa el nombre del héroe">
-      </mat-form-field>
-    </div>
+  <h2 mat-typography class="mat-h2" style="font-size: 2rem;">
+    Buscador de Héroes
+  </h2>
+
+  <div style="margin-top: 16px;">
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Buscador de Héroes</mat-label>
+      <input matInput placeholder="Ingresa el nombre del héroe" [(ngModel)]="searchTerm" (ngModelChange)="onSearch()">
+    </mat-form-field>
   </div>
-  
+
+  @if (filteredHeroes.length === 0) {
+    <div style="margin-top: 16px;">
+      <p>No se encontraron héroes.</p>
+    </div>
+  } @else {
+    <div style="margin-top: 16px;">
+      <mat-list>
+        @for (hero of filteredHeroes; track hero) {
+          <mat-list-item>
+            {{ hero.superHero }} ({{ hero.alterEgo }})
+          </mat-list-item>
+        }
+      </mat-list>
+    </div>}
+</div>

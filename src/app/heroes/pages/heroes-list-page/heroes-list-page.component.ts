@@ -17,16 +17,26 @@ import { Heroe } from '../../interfaces/heroes';
   templateUrl: './heroes-list-page.component.html',
   styleUrl: './heroes-list-page.component.css'
 })
-export class HeroesListPageComponent {
+export class HeroesListPageComponent implements OnInit {
   displayedColumns: string[] = ['superHero', 'alterEgo', 'firstAppearance', 'characters', 'creator'];
+  heroes: Heroe[] = [];
 
-  heroes: Heroe[] = [
-    { superHero: 'Superman', alterEgo: 'Clark Kent', firstAppearance: 'Action Comics #1', characters: 'Superman, Kal-El', creator: 'DC' },
-    { superHero: 'Spider-Man', alterEgo: 'Peter Parker', firstAppearance: 'Amazing Fantasy #15', characters: 'Spider-Man, Peter Parker', creator: 'Marvel' },
-    { superHero: 'Batman', alterEgo: 'Bruce Wayne', firstAppearance: 'Detective Comics #27', characters: 'Batman, Bruce Wayne', creator: 'DC' },
-    { superHero: 'Iron Man', alterEgo: 'Tony Stark', firstAppearance: 'Tales of Suspense #39', characters: 'Iron Man, Tony Stark', creator: 'Marvel' }
-  ];
+  ngOnInit(): void {
+    this.loadHeroes();
+  }
 
-  
-  
+  loadHeroes() {
+    const heroesData = localStorage.getItem('heroes');
+    if (heroesData) {
+      this.heroes = JSON.parse(heroesData);
+    } else {
+      // Inicializar con datos por defecto si no hay datos en localStorage
+      this.heroes = [
+        { superHero: 'Superman', alterEgo: 'Clark Kent', firstAppearance: 'Action Comics #1', characters: 'Lois Lane, Lex Luthor', creator: 'DC' },
+        { superHero: 'Spider-Man', alterEgo: 'Peter Parker', firstAppearance: 'Amazing Fantasy #15', characters: 'Mary Jane Watson, Green Goblin', creator: 'Marvel' }
+      ];
+      localStorage.setItem('heroes', JSON.stringify(this.heroes));
+    }
+  }
 }
+  

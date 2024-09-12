@@ -1,35 +1,35 @@
 <div class="container mt-3">
   <h2 style="font-size: 2rem;">Agregar Héroe</h2>
-  <form>
+  <form [formGroup]="heroForm" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="col-md-6">
         <mat-form-field appearance="fill" class="mb-2" style="width: 100%;">
           <mat-label>Super héroe</mat-label>
-          <input matInput placeholder="Nombre del superhéroe" id="superHero" required>
+          <input matInput formControlName="superHero" placeholder="Nombre del superhéroe" required>
         </mat-form-field>
       </div>
 
       <div class="col-md-6">
         <mat-form-field appearance="fill" class="mb-2" style="width: 100%;">
           <mat-label>Alter ego</mat-label>
-          <input matInput placeholder="Nombre del alter ego" id="alterEgo" required>
+          <input matInput formControlName="alterEgo" placeholder="Nombre del alter ego" required>
         </mat-form-field>
       </div>
     </div>
 
     <mat-form-field appearance="fill" class="mb-2" style="width: 100%;">
       <mat-label>Primera aparición</mat-label>
-      <input matInput placeholder="Primera aparición del héroe" id="firstAppearance" required>
+      <input matInput formControlName="firstAppearance" placeholder="Primera aparición del héroe" required>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="mb-2" style="width: 100%;">
       <mat-label>Personajes</mat-label>
-      <input matInput placeholder="Personajes" id="characters" required>
+      <input matInput formControlName="characters" placeholder="Personajes" required>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="mb-2" style="width: 100%;">
       <mat-label>Creador</mat-label>
-      <mat-select id="creator" required>
+      <mat-select formControlName="creator" required>
         <mat-option value="DC">DC - Comics</mat-option>
         <mat-option value="Marvel">Marvel - Comics</mat-option>
       </mat-select>
@@ -37,7 +37,7 @@
 
     <mat-form-field appearance="fill" class="mb-2" style="width: 100%;">
       <mat-label>Imagen Alternativa</mat-label>
-      <input matInput placeholder="URL de imagen alternativa" id="altImage">
+      <input matInput formControlName="altImage" placeholder="URL de imagen alternativa">
     </mat-form-field>
 
     <button class="mb-4" mat-raised-button type="submit">
@@ -45,3 +45,4 @@
     </button>
   </form>
 </div>
+
