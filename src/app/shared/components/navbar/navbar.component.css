@@ -1,21 +1,23 @@
-.navbar-toggler {
-    border-color: rgba(255,255,255,0.5);
-  }
-  
-  .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  }
-  
-  .sidebar {
-    position: fixed;
-    top: 56px;
-    left: -250px;
-    width: 250px;
-    height: 100%;
-    background-color: #f8f9fa;
-    transition: 0.3s;
-  }
-  
-  .sidebar.active {
-    left: 0;
-  }
+.example-container {
+  height: 100vh;
+}
+
+.sidenav {
+  width: 250px;
+  background-color: #d7e3ff; /* Color de la barra lateral */
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #d7e3ff; /* Color de la barra de herramientas */
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.mat-list-item.active {
+  background-color: #c1d0f4; /* Color de acento para el item activo */
+}

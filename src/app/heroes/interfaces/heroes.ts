@@ -1,4 +1,7 @@
 export interface Heroe {
-    name: string;
-    power: string;
+superHero: string;
+  alterEgo: string;
+  firstAppearance: string;
+  characters: string;
+  creator: string;
     }
