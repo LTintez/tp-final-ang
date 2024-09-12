@@ -3,7 +3,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatList, MatListItem } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-heroes-search-page',
@@ -15,6 +17,8 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatListItem,
     MatList,
+    MatIconModule,
+    RouterModule
   ],
   templateUrl: './heroes-search-page.component.html',
   styleUrl: './heroes-search-page.component.css'

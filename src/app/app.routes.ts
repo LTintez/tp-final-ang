@@ -5,6 +5,7 @@ import { HeroesListPageComponent } from './heroes/pages/heroes-list-page/heroes-
 import { HeroesSearchPageComponent } from './heroes/pages/heroes-search-page/heroes-search-page.component';
 import { LoginComponent } from './shared/pages/login/login.component';
 import { RegisterComponent } from './shared/pages/register/register.component';
+import { HeroeComponent } from './heroes/pages/heroe/heroe.component';
 
 export const routes: Routes = [
     {
@@ -21,6 +22,11 @@ export const routes: Routes = [
         path: 'register',
         title: 'Registrarse',
         component: RegisterComponent
+    },
+    {
+        path: 'heroe',
+        title: 'Héroe',
+        component: HeroeComponent,
     },
     {
         path: 'home',
@@ -42,5 +48,6 @@ export const routes: Routes = [
                 component: HeroesSearchPageComponent,
             },
         ],
+        
     },
 ];

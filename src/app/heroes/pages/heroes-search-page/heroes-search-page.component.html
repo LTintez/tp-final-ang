@@ -21,6 +21,7 @@
           @for (hero of filteredHeroes; track hero) {
             <mat-list-item>
               {{ hero.superHero }} ({{ hero.alterEgo }})
+              <a [routerLink]="['/heroe']" style="margin-left: 10px;">Ver más</a>
             </mat-list-item>
           }
         </mat-list>
