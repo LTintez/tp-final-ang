@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -23,7 +23,15 @@ import { MatButtonModule } from '@angular/material/button';
 export class NavbarComponent {
   isSidebarOpen = false;
 
+  constructor(private router : Router){
+
+  }
+
   toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;
+  }
+
+  logoutRedirect() {
+    this.router.navigate(['/login']);
   }
 }

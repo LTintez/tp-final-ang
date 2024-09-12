@@ -4,4 +4,4 @@ superHero: string;
   firstAppearance: string;
   characters: string;
   creator: string;
-    }
+}
