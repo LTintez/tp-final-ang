@@ -14,4 +14,8 @@ export class HeroesService {
   getData(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
   }
+
+  addHero(hero: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, hero);
+  }
 }

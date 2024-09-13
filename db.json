@@ -1,38 +1,55 @@
 {
-    "heroes": [
-      {
-        "id" : "1",
-        "superHero": "Superman",
-        "alterEgo": "Clark Kent",
-        "firstAppearance": "Action Comics #1",
-        "characters": "Lois Lane, Lex Luthor",
-        "creator": "DC",
-        "altImage": "https://example.com/superman.jpg"
-      },
-      {
-        "id" : "2",
-        "superHero": "Spider-Man",
-        "alterEgo": "Peter Parker",
-        "firstAppearance": "Amazing Fantasy #15",
-        "characters": "Mary Jane Watson, Green Goblin",
-        "creator": "Marvel",
-        "altImage": "https://example.com/spiderman.jpg"
-      },
-      {
-        "id" : "3",
-        "superHero": "Spider-Man2",
-        "alterEgo": "Peter Parker",
-        "firstAppearance": "Amazing Fantasy #15",
-        "characters": "Mary Jane Watson, Green Goblin",
-        "creator": "Marvel",
-        "altImage": "https://example.com/spiderman.jpg"
-      }
-    ],
-    "comments": [
-      { "id": "1", "text": "a comment about post 1", "postId": "1" },
-      { "id": "2", "text": "another comment about post 1", "postId": "1" }
-    ],
-    "profile": {
-      "name": "typicode"
+  "heroes": [
+    {
+      "id": "1",
+      "superHero": "Superman",
+      "alterEgo": "Clark Kent",
+      "firstAppearance": "Action Comics #1",
+      "characters": "Lois Lane, Lex Luthor",
+      "creator": "DC",
+      "altImage": "https://example.com/superman.jpg"
+    },
+    {
+      "id": "2",
+      "superHero": "Spider-Man",
+      "alterEgo": "Peter Parker",
+      "firstAppearance": "Amazing Fantasy #15",
+      "characters": "Mary Jane Watson, Green Goblin",
+      "creator": "Marvel",
+      "altImage": "https://example.com/spiderman.jpg"
+    },
+    {
+      "id": "3",
+      "superHero": "Spider-Man2",
+      "alterEgo": "Peter Parker",
+      "firstAppearance": "Amazing Fantasy #15",
+      "characters": "Mary Jane Watson, Green Goblin",
+      "creator": "Marvel",
+      "altImage": "https://example.com/spiderman.jpg"
+    },
+    {
+      "id": "377d",
+      "superHero": "thor",
+      "alterEgo": "thor",
+      "firstAppearance": "el dios del raio",
+      "characters": "loki",
+      "creator": "Marvel",
+      "altImage": "https://img2.rtve.es/i/?w=1600&i=1585840423850.jpg"
     }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
   }
+}

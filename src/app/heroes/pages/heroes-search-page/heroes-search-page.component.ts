@@ -6,6 +6,8 @@ import { MatList, MatListItem } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HeroesService } from '../../services/heroes.service';
+
 
 @Component({
   selector: 'app-heroes-search-page',
@@ -21,26 +23,31 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   templateUrl: './heroes-search-page.component.html',
-  styleUrl: './heroes-search-page.component.css'
+  styleUrls: ['./heroes-search-page.component.css']
 })
 export class HeroesSearchPageComponent implements OnInit {
   searchTerm: string = '';
   heroes: any[] = [];
   filteredHeroes: any[] = [];
 
+  constructor(private heroesService: HeroesService) { }
+
   ngOnInit(): void {
     this.loadHeroes();
   }
 
   loadHeroes() {
-    const heroesData = localStorage.getItem('heroes');
-    if (heroesData) {
-      this.heroes = JSON.parse(heroesData);
-      this.filteredHeroes = this.heroes; 
-    } else {
-      this.heroes = [];
-      this.filteredHeroes = [];
-    }
+    this.heroesService.getData().subscribe(
+      (data) => {
+        this.heroes = data;
+        this.filteredHeroes = this.heroes;
+      },
+      (error) => {
+        console.error('Error al cargar los héroes:', error);
+        this.heroes = [];
+        this.filteredHeroes = [];
+      }
+    );
   }
 
   onSearch() {
