@@ -7,7 +7,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from '../../../heroes/services/login.service';
-import * as userData from '../../../assets/users.json';
 
 @Component({
   selector: 'app-login',
@@ -20,23 +19,23 @@ import * as userData from '../../../assets/users.json';
     ReactiveFormsModule
   ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  users: any = [];
-  loginForm: FormGroup;  
+  loginForm: FormGroup;
 
-  ngOnInit(): void {
-    this.users = (userData as any).default;
-    console.log(this.users); 
-  }
-
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private loginService: LoginService 
+  ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
   }
+
+  ngOnInit(): void {}
 
   get email() {
     return this.loginForm.get('email');
@@ -49,15 +48,18 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
-      const user = this.users.find((u: any) => u.email === email && u.password === password);
-      
-      if (user) {
-        console.log('Inicio de sesión exitoso');
-        this.router.navigate(['/home']);
-      } else {
-        console.log('Credenciales incorrectas');
-        alert('Correo o contraseña incorrectos');
-      }
+
+      this.loginService.login(email, password).subscribe((isAuthenticated: boolean) => {
+        if (isAuthenticated) {
+          console.log('Inicio de sesión exitoso');
+          this.router.navigate(['/home']);
+        } else {
+          console.log('Credenciales incorrectas');
+          alert('Correo o contraseña incorrectos');
+        }
+      }, error => {
+        console.error('Error durante la autenticación:', error);
+      });
     }
   }
 

@@ -7,7 +7,7 @@ import { User } from '../interfaces/user';
   providedIn: 'root'
 })
 export class LoginService {
-  private usersUrl = 'assets/users.json'; // Ruta al archivo JSON
+  private usersUrl = 'http://localhost:3000/users'; 
 
   constructor(private http: HttpClient) {}
 
@@ -19,7 +19,7 @@ export class LoginService {
     return this.getUsers().pipe(
       map((users: User[]) => {
         const user = users.find(u => u.email === email && u.password === password);
-        return !!user; // Devuelve true si el usuario existe, false de lo contrario
+        return !!user;
       })
     );
   }

@@ -49,7 +49,8 @@
       "postId": "1"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "users": [{
+    "email": "user@example.com",
+    "password": "Admin1234!"
+  }]
 }
