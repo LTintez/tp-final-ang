@@ -1,8 +1,24 @@
+.bg-img {
+  background-image: url('../../../assets/20171130_imax-1280x720.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 100vh;  
+  width: 100vw;
+  margin-top: 0;
+}
+
+.login {
+  margin-top: 100px;
+  
+}
 .login-card {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-  }
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: linear-gradient(to left, rgb(20, 20, 124, 0.6), rgba(221, 130, 130, 0.655));
+}
+
   
   mat-card-header {
     text-align: center;
