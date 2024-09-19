@@ -47,6 +47,11 @@ export const routes: Routes = [
                 title: 'Buscar Héroes',
                 component: HeroesSearchPageComponent,
             },
+            {
+                path: 'heroe',
+                title: 'Héroe',
+                component: HeroeComponent,
+            },
         ],
         
     },
