@@ -8,18 +8,18 @@
       <a mat-list-item routerLink="search" routerLinkActive="active">Buscar Héroe</a>
     </mat-nav-list>
   </mat-sidenav>
-
   <mat-sidenav-content>
     <mat-toolbar class="toolbar">
       <button mat-icon-button (click)="toggleSidebar()">
         <mat-icon>menu</mat-icon>
       </button>
-      <span class="spacer"></span>
+      <span class="spacer">       
+      </span>
+      <img src="https://i.pinimg.com/736x/81/78/cf/8178cf3e98fdaba73d2f2a00f94e074b.jpg"  alt="">
       <button mat-button (click)="logoutRedirect()">
         <mat-icon>logout</mat-icon> Logout
       </button>
     </mat-toolbar>
-
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

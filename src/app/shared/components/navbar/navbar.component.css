@@ -5,14 +5,14 @@
 
 .sidenav {
   width: 250px;
-  background-color: #d7e3ff; /* Color de la barra lateral */
+  background-image: url('../../../assets/cerebro.png');
 }
 
 mat-toolbar {
   position: sticky;
   top: 0;
   z-index: 1;
-  background-color: #d7e3ff; /* Color de la barra de herramientas */
+  background: linear-gradient(to left, rgba(20, 20, 124, 0.958), rgba(187, 33, 25, 0.947));
 }
 
 .spacer {
@@ -20,5 +20,5 @@ mat-toolbar {
 }
 
 .mat-list-item.active {
-  background-color: #c1d0f4; /* Color de acento para el item activo */
+  background-color: #c1d0f4; 
 }

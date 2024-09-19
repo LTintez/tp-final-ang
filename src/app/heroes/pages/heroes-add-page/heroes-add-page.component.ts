@@ -49,15 +49,12 @@ export class HeroesAddPageComponent implements OnInit {
 
   onSubmit() {
     if (this.heroForm.valid) {
-      const newHero = this.heroForm.value;
+      const newHero = this.heroForm.value;      
       
-      // Llama al servicio para agregar un nuevo héroe
       this.heroesService.addHero(newHero).subscribe(
         (response: any) => {
           console.log('Héroe agregado:', response);
-          this.heroForm.reset();  // Resetea el formulario después de agregar
-          // Opcional: Redirige a otra página si es necesario
-          // this.router.navigate(['/heroes-list']);
+          this.heroForm.reset();           
         },
         (error: any) => {
           console.error('Error al agregar héroe:', error);

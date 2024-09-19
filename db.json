@@ -49,8 +49,17 @@
       "postId": "1"
     }
   ],
-  "users": [{
-    "email": "user@example.com",
-    "password": "Admin1234!"
-  }]
+  "users": [
+    {
+      "email": "user@example.com",
+      "password": "Admin1234!",
+      "id": "348a"
+    },
+    {
+      "id": "526f",
+      "name": "Pablo Peralta",
+      "email": "pablo.peralta94@gmail.com",
+      "password": "1234"
+    }
+  ]
 }

@@ -8,6 +8,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1; /* Asegura que el fondo esté detrás del contenido */
+    z-index: -1; 
   }
   
