@@ -1,36 +1,36 @@
 <div class="container mt-3">
     <h2 style="font-size: 2rem;">Listado de Héroes</h2>
   
-    <table mat-table [dataSource]="heroes" class="mat-elevation-z8" style="width: 100%;">
+    <table mat-table [dataSource]="heroes" class="mat-elevation-z8" style="width: 100%;" class="table">
   
       <!-- Super Héroe Column -->
-      <ng-container matColumnDef="superHero">
+      <ng-container matColumnDef="superHero" >
         <th mat-header-cell *matHeaderCellDef> Super Héroe </th>
-        <td mat-cell *matCellDef="let hero"> {{hero.superHero}} </td>
+        <td mat-cell *matCellDef="let hero" class="table"> {{hero.superHero}} </td>
       </ng-container>
   
       <!-- Alter Ego Column -->
       <ng-container matColumnDef="alterEgo">
         <th mat-header-cell *matHeaderCellDef> Alter Ego </th>
-        <td mat-cell *matCellDef="let hero"> {{hero.alterEgo}} </td>
+        <td mat-cell *matCellDef="let hero" class="table"> {{hero.alterEgo}} </td>
       </ng-container>
   
       <!-- Primera Aparición Column -->
       <ng-container matColumnDef="firstAppearance">
         <th mat-header-cell *matHeaderCellDef> Primera Aparición </th>
-        <td mat-cell *matCellDef="let hero"> {{hero.firstAppearance}} </td>
+        <td mat-cell *matCellDef="let hero" class="table"> {{hero.firstAppearance}} </td>
       </ng-container>
   
       <!-- Personajes Column -->
       <ng-container matColumnDef="characters">
         <th mat-header-cell *matHeaderCellDef> Personajes </th>
-        <td mat-cell *matCellDef="let hero"> {{hero.characters}} </td>
+        <td mat-cell *matCellDef="let hero" class="table"> {{hero.characters}} </td>
       </ng-container>
   
       <!-- Creador Column -->
       <ng-container matColumnDef="creator">
         <th mat-header-cell *matHeaderCellDef> Creador </th>
-        <td mat-cell *matCellDef="let hero"> {{hero.creator}} </td>
+        <td mat-cell *matCellDef="let hero" class="table"> {{hero.creator}} </td>
       </ng-container>
   
       <!-- Header row -->
