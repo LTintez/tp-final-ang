@@ -6,7 +6,11 @@
       </button>
       <span class="spacer">       
       </span>
-      <img src="assets/marvel-logo.png"  alt="" class="invert"><img src="assets/dc-logo.png"  alt="">
+      <img
+        src="assets/marvel-logo.png"
+        alt="Marvel Logo"
+        class="invert"
+        (click)="onMarvelLogoClick()"/><img src="assets/dc-logo.png"  alt="" (click)="onDcLogoClick()">
       <span class="spacer"> 
       </span>
       <button mat-button (click)="logoutRedirect()" class="b-light" >

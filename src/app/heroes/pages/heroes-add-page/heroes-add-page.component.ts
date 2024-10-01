@@ -33,7 +33,7 @@ export class HeroesAddPageComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private heroesService: HeroesService  // Inyecta el servicio aquí
+    private heroesService: HeroesService  
   ) {
     this.heroForm = this.fb.group({
       superHero: ['', Validators.required],

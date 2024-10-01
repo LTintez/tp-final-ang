@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -21,6 +21,10 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+
+  @Output() marvelLogoClicked = new EventEmitter<void>();
+  @Output() dcLogoClicked = new EventEmitter<void>();
+  
   isSidebarOpen = false;
 
   constructor(private router : Router){
@@ -33,5 +37,13 @@ export class NavbarComponent {
 
   logoutRedirect() {
     this.router.navigate(['/login']);
+  }
+
+  onMarvelLogoClick() {
+    this.marvelLogoClicked.emit(); 
+  }
+
+  onDcLogoClick() {
+    this.dcLogoClicked.emit(); 
   }
 }
