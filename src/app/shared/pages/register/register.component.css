@@ -60,3 +60,7 @@ mat-card-actions {
   width: 100%;
   gap: 8px;
 }
+
+#btn-color {
+  color: white;
+}
