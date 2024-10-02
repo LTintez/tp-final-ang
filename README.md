@@ -1,27 +1,43 @@
-# TpFinal
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
+# Trabajo Final Angular
 
-## Development server
+Trabajo final del curso de Angular - UTN.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## 👥 Integrantes del equipo:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+| Nombre          | Linkedin                                                                                                                                 | Github/Portfolio                                                                                                                                   |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| Pablo Peralta   | [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pablo-andres-peralta/) | [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/PabloPeralta94) |
+| Lautaro Tintez  | [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lautarotintez/) | [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LautaroTnz)  |
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 💻 Tecnologías utilizadas:
 
-## Running unit tests
+[![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
+[![Material-UI](https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white)](https://mui.com/)
+[![JsonServer](https://img.shields.io/badge/Json%20Server-7B9C6A?style=for-the-badge&logo=json&logoColor=white)](https://github.com/typicode/json-server)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Instrucciones para Levantar el Proyecto
 
-## Further help
+## 1. Instalar dependencias
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm install
+```
+
+## 2. Correr el proyecto (Con el comando npm start va a levantar tanto el servidor frontend como el json server)
+  ```bash
+  npm start
+  ```
+
+# Credenciales
+
+
+```bash
+Email: user@example.com
+Contraseña: Admin1234! 
+```
+
