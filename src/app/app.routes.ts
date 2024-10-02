@@ -8,51 +8,51 @@ import { RegisterComponent } from './shared/pages/register/register.component';
 import { HeroeComponent } from './heroes/pages/heroe/heroe.component';
 
 export const routes: Routes = [
-    {
-        path: '',
-        redirectTo: '/login',
-        pathMatch: 'full'
-    },
-    {
-        path: 'login',
-        title: 'Iniciar Sesión',
-        component: LoginComponent
-    },
-    {
-        path: 'register',
-        title: 'Registrarse',
-        component: RegisterComponent
-    },
-    {
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full',
+  },
+  { path: 'heroe/:id', component: HeroeComponent },
+  {
+    path: 'login',
+    title: 'Iniciar Sesión',
+    component: LoginComponent,
+  },
+  {
+    path: 'register',
+    title: 'Registrarse',
+    component: RegisterComponent,
+  },
+  {
+    path: 'heroe',
+    title: 'Héroe',
+    component: HeroeComponent,
+  },
+  {
+    path: 'home',
+    component: HomePageComponent,
+    children: [
+      {
+        path: 'add',
+        title: 'Agregar Héroes',
+        component: HeroesAddPageComponent,
+      },
+      {
+        path: 'list',
+        title: 'Listar Héroes',
+        component: HeroesListPageComponent,
+      },
+      {
+        path: 'search',
+        title: 'Buscar Héroes',
+        component: HeroesSearchPageComponent,
+      },
+      {
         path: 'heroe',
         title: 'Héroe',
         component: HeroeComponent,
-    },
-    {
-        path: 'home',
-        component: HomePageComponent,
-        children: [
-            {
-                path: 'add',
-                title: 'Agregar Héroes',
-                component: HeroesAddPageComponent,
-            },
-            {
-                path: 'list',
-                title: 'Listar Héroes',
-                component: HeroesListPageComponent,
-            },
-            {
-                path: 'search',
-                title: 'Buscar Héroes',
-                component: HeroesSearchPageComponent,
-            },
-            {
-                path: 'heroe',
-                title: 'Héroe',
-                component: HeroeComponent,
-            },
-        ],
-        
-    },
+      },
+    ],
+  },
 ];

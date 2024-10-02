@@ -4,33 +4,29 @@
   background-color: rgba(240, 248, 255, 0);
 }
 
-
-
 .logout {
   color: white;
   text-shadow: 5px 5px 5px black;
-  
 }
 .b-light {
   color: aliceblue;
-  background-color: transparent; /* Fondo inicial transparente */
- 
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Suaviza la transición */
+  background-color: transparent;
+
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .b-light:hover {
-  background-color: rgba(255, 255, 255, 0.453); /* Fondo blanco semitransparente en hover */
-  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.6); /* Luz suave alrededor */
+  background-color: rgba(255, 255, 255, 0.453);
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.6);
 }
 
 .sidenav {
   width: 250px;
   height: 100vh;
   padding-top: 50px;
-  padding-left: 25px;  
+  padding-left: 25px;
   overflow: hidden;
   color: white;
-
 }
 
 #links {
@@ -84,7 +80,6 @@ img {
   animation: electrify 5s infinite ease-in-out;
 }
 
-
 mat-toolbar {
   position: sticky;
   top: 0;
@@ -101,10 +96,9 @@ mat-toolbar {
   flex: 1 1 auto;
 }
 
-
 .mat-list-item.active {
-  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente en hover */
-  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.6); /* Luz suave alrededor */
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.6);
 }
 
 .mat-list-item:hover {
@@ -112,48 +106,55 @@ mat-toolbar {
   opacity: 1;
 }
 
-
-/* animaciones */
-
 @keyframes electrify {
-  0%, 100% {
+  0%,
+  100% {
     filter: brightness(1);
   }
-  10%, 20%, 70% {
-    filter: brightness(3); 
+  10%,
+  20%,
+  70% {
+    filter: brightness(3);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
   }
-  15%, 25%, 75% {
-    filter: brightness(0.5); 
+  15%,
+  25%,
+  75% {
+    filter: brightness(0.5);
     box-shadow: none;
   }
-  30%, 80% {
-    filter: brightness(1.5); 
+  30%,
+  80% {
+    filter: brightness(1.5);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
   }
 }
 
 @keyframes shake {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0);
   }
-  10%, 90% {
+  10%,
+  90% {
     transform: translate(2px, -2px);
   }
-  20%, 80% {
+  20%,
+  80% {
     transform: translate(-2px, 2px);
   }
-  30%, 70% {
+  30%,
+  70% {
     transform: translate(1px, -1px);
   }
-  40%, 60% {
+  40%,
+  60% {
     transform: translate(-1px, 1px);
   }
   50% {
     transform: translate(0, 0);
   }
 }
-
 
 img:hover {
   animation: electrify 1s ease-in-out, shake 0.2s infinite;

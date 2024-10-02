@@ -1,20 +1,20 @@
-<mat-sidenav-container class="example-container"> 
+<mat-sidenav-container class="example-container">
   <mat-sidenav-content>
     <mat-toolbar class="toolbar">
       <button mat-icon-button (click)="toggleSidebar()" class="b-light">
         <mat-icon>menu</mat-icon>
       </button>
-      <span class="spacer">       
-      </span>
+      <span class="spacer"> </span>
       <img
         src="assets/marvel-logo.png"
         alt="Marvel Logo"
         class="invert"
-        (click)="onMarvelLogoClick()"/><img src="assets/dc-logo.png"  alt="" (click)="onDcLogoClick()">
-      <span class="spacer"> 
-      </span>
-      <button mat-button (click)="logoutRedirect()" class="b-light" >
-        <mat-icon color="primary" >logout</mat-icon> <span class="logout">Logout</span>
+        (click)="onMarvelLogoClick()"
+      /><img src="assets/dc-logo.png" alt="" (click)="onDcLogoClick()" />
+      <span class="spacer"> </span>
+      <button mat-button (click)="logoutRedirect()" class="b-light">
+        <mat-icon color="primary">logout</mat-icon>
+        <span class="logout">Logout</span>
       </button>
     </mat-toolbar>
     <router-outlet></router-outlet>
@@ -22,12 +22,29 @@
   <mat-sidenav #sidenav mode="side" [(opened)]="isSidebarOpen" class="sidenav">
     <h3>Navegar</h3>
     <mat-nav-list>
-      <a mat-list-item routerLink="list" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true} " class="b-light">
+      <a
+        mat-list-item
+        routerLink="list"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="b-light"
+      >
         <span class="logout">Listar Héroe</span>
       </a>
-      <a mat-list-item routerLink="add" routerLinkActive="active" class="b-light"><span class="logout">Agregar Héroe</span></a>
-      <a mat-list-item routerLink="search" routerLinkActive="active" class="b-light"><span class="logout">Buscar Héroe</span></a>
+      <a
+        mat-list-item
+        routerLink="add"
+        routerLinkActive="active"
+        class="b-light"
+        ><span class="logout">Agregar Héroe</span></a
+      >
+      <a
+        mat-list-item
+        routerLink="search"
+        routerLinkActive="active"
+        class="b-light"
+        ><span class="logout">Buscar Héroe</span></a
+      >
     </mat-nav-list>
   </mat-sidenav>
 </mat-sidenav-container>
-

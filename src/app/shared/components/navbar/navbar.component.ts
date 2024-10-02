@@ -10,26 +10,25 @@ import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, 
+  imports: [
+    CommonModule,
     RouterModule,
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
     MatListModule,
-    MatButtonModule],
+    MatButtonModule,
+  ],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-
   @Output() marvelLogoClicked = new EventEmitter<void>();
   @Output() dcLogoClicked = new EventEmitter<void>();
-  
+
   isSidebarOpen = false;
 
-  constructor(private router : Router){
-
-  }
+  constructor(private router: Router) {}
 
   toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;
@@ -40,10 +39,10 @@ export class NavbarComponent {
   }
 
   onMarvelLogoClick() {
-    this.marvelLogoClicked.emit(); 
+    this.marvelLogoClicked.emit();
   }
 
   onDcLogoClick() {
-    this.dcLogoClicked.emit(); 
+    this.dcLogoClicked.emit();
   }
 }

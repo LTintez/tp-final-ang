@@ -7,7 +7,7 @@
       "firstAppearance": "Action Comics #1",
       "characters": "Lois Lane, Lex Luthor",
       "creator": "DC",
-      "altImage": "https://example.com/superman.jpg"
+      "altImage": "https://resizer.glanacion.com/resizer/v2/asi-se-veria-superman-en-la-vida-real-segun-la-SS2YWWIXDVEPPIPZDHJII7NWTM.PNG?auth=ba47cfa4417daa14555b3e27c76bd60d60c3123c13c3e02b8fd2abb742d81fef&width=768&quality=70&smart=false"
     },
     {
       "id": "2",
@@ -16,40 +16,37 @@
       "firstAppearance": "Amazing Fantasy #15",
       "characters": "Mary Jane Watson, Green Goblin",
       "creator": "Marvel",
-      "altImage": "https://example.com/spiderman.jpg"
+      "altImage": "https://wallpapers.com/images/hd/spiderman-background-oycfyb1ksermw921.jpg"
     },
     {
       "id": "3",
-      "superHero": "Spider-Man2",
-      "alterEgo": "Peter Parker",
-      "firstAppearance": "Amazing Fantasy #15",
-      "characters": "Mary Jane Watson, Green Goblin",
-      "creator": "Marvel",
-      "altImage": "https://example.com/spiderman.jpg"
+      "superHero": "Batman",
+      "alterEgo": "Bruce Wayne",
+      "firstAppearance": "Detective Comics #27",
+      "characters": "Alfred, Joker, Robin",
+      "creator": "DC",
+      "altImage": "https://i0.wp.com/www.lacosacine.com/wp-content/uploads/2024/09/Batman-Banner-1.jpg?resize=800%2C600&ssl=1"
     },
     {
-      "id": "377d",
-      "superHero": "thor",
-      "alterEgo": "thor",
-      "firstAppearance": "el dios del raio",
-      "characters": "loki",
+      "id": "4",
+      "superHero": "Thor",
+      "alterEgo": "Thor Odinson",
+      "firstAppearance": "Journey into Mystery #83",
+      "characters": "Loki, Jane Foster",
       "creator": "Marvel",
-      "altImage": "https://img2.rtve.es/i/?w=1600&i=1585840423850.jpg"
-    }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "text": "a comment about post 1",
-      "postId": "1"
+      "altImage": "https://media.vandalsports.com/i/1200x1200/11-2022/202211188217_1.jpg"
     },
     {
-      "id": "2",
-      "text": "another comment about post 1",
-      "postId": "1"
+      "id": "5",
+      "superHero": "Wonder Woman",
+      "alterEgo": "Diana Prince",
+      "firstAppearance": "All Star Comics #8",
+      "characters": "Steve Trevor, Cheetah",
+      "creator": "DC",
+      "altImage": "https://www.akiracomics.com/imagenes/poridentidad?identidad=f1f1181b-81b1-426f-8c83-0f09c34caa66&ancho=850&alto="
     }
   ],
-  "users": [
+      "users": [
     {
       "email": "user@example.com",
       "password": "Admin1234!",
@@ -60,6 +57,12 @@
       "name": "Pablo Peralta",
       "email": "pablo.peralta94@gmail.com",
       "password": "1234"
+    },
+    {
+      "id": "e498",
+      "name": "Jose Luis",
+      "email": "jose@correo.com",
+      "password": "123"
     }
   ]
 }

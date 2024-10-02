@@ -27,14 +27,13 @@ export class LoginService {
   }
 
   checkEmailExists(email: string): Observable<boolean> {
-    return this.http.get<any[]>(`${this.usersUrl}?email=${email}`).pipe(
-      map((users) => users.length > 0) 
-    );
+    return this.http
+      .get<any[]>(`${this.usersUrl}?email=${email}`)
+      .pipe(map((users) => users.length > 0));
   }
-
 
   registerUser(name: string, email: string, password: string): Observable<any> {
     const newUser = { name, email, password };
-    return this.http.post(this.usersUrl, newUser); 
+    return this.http.post(this.usersUrl, newUser);
   }
 }

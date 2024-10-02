@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HeroesService } from '../../services/heroes.service';
 
-
 @Component({
   selector: 'app-heroes-search-page',
   standalone: true,
@@ -20,17 +19,17 @@ import { HeroesService } from '../../services/heroes.service';
     MatListItem,
     MatList,
     MatIconModule,
-    RouterModule
+    RouterModule,
   ],
   templateUrl: './heroes-search-page.component.html',
-  styleUrls: ['./heroes-search-page.component.css']
+  styleUrls: ['./heroes-search-page.component.css'],
 })
 export class HeroesSearchPageComponent implements OnInit {
   searchTerm: string = '';
   heroes: any[] = [];
   filteredHeroes: any[] = [];
 
-  constructor(private heroesService: HeroesService) { }
+  constructor(private heroesService: HeroesService) {}
 
   ngOnInit(): void {
     this.loadHeroes();
@@ -52,7 +51,7 @@ export class HeroesSearchPageComponent implements OnInit {
 
   onSearch() {
     if (this.searchTerm) {
-      this.filteredHeroes = this.heroes.filter(hero =>
+      this.filteredHeroes = this.heroes.filter((hero) =>
         hero.superHero.toLowerCase().includes(this.searchTerm.toLowerCase())
       );
     } else {

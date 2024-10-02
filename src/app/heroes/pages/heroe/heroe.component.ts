@@ -1,36 +1,50 @@
-import { Component, Input } from '@angular/core';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatListItem } from '@angular/material/list';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HeroesService } from '../../services/heroes.service';
+import { MatIcon } from '@angular/material/icon';
+import { MatFormField, MatLabel } from '@angular/material/form-field';
+import {
+  MatCard,
+  MatCardContent,
+  MatCardHeader,
+  MatCardSubtitle,
+  MatCardTitle,
+} from '@angular/material/card';
 
 @Component({
   selector: 'app-heroe',
+  templateUrl: './heroe.component.html',
   standalone: true,
   imports: [
-    MatInputModule,
-    MatSelectModule,
-    MatButtonModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatToolbarModule,
-    ReactiveFormsModule,
-    MatListItem
+    MatIcon,
+    MatLabel,
+    MatFormField,
+    MatCardContent,
+    MatCardHeader,
+    MatCardTitle,
+    MatCardSubtitle,
+    MatCard,
   ],
-  templateUrl: './heroe.component.html',
-  styleUrl: './heroe.component.css'
+  styleUrls: ['./heroe.component.css'],
 })
-export class HeroeComponent {
-  @Input() hero: any;
+export class HeroeComponent implements OnInit {
+  hero: any;
 
-  constructor(private router: Router) { }
+  constructor(
+    private route: ActivatedRoute,
+    private heroesService: HeroesService,
+    private router: Router
+  ) {}
 
-  // Método para redirigir al usuario a la ruta de búsqueda
+  ngOnInit(): void {
+    const heroId = this.route.snapshot.paramMap.get('id');
+    if (heroId) {
+      this.heroesService.getHeroById(heroId).subscribe((data) => {
+        this.hero = data;
+      });
+    }
+  }
+
   goBack(): void {
     this.router.navigate(['/home/search']);
   }

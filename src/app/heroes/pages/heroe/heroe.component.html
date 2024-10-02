@@ -1,47 +1,51 @@
-<div class="container mt-3">
-    <h2 style="font-size: 2rem;">Detalle del Héroe</h2>
-    <form>
-      <div class="row">
-        <div class="col-md-6">
-          <mat-form-field appearance="fill" class="mb-2" style="width: 100%;">
-            <mat-label>Super héroe</mat-label>
-            <input matInput [value]="" readonly>
-          </mat-form-field>
-        </div>
-  
-        <div class="col-md-6">
-          <mat-form-field appearance="fill" class="mb-2" style="width: 100%;">
-            <mat-label>Alter ego</mat-label>
-            <input matInput [value]="" readonly>
-          </mat-form-field>
-        </div>
-      </div>
-  
-      <mat-form-field appearance="fill" class="mb-2" style="width: 100%;">
-        <mat-label>Primera aparición</mat-label>
-        <input matInput [value]="" readonly>
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill" class="mb-2" style="width: 100%;">
-        <mat-label>Personajes</mat-label>
-        <input matInput [value]="" readonly>
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill" class="mb-2" style="width: 100%;">
-        <mat-label>Creador</mat-label>
-        <input matInput [value]="" readonly>
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill" class="mb-2" style="width: 100%;">
-        <mat-label>Imagen Alternativa</mat-label>
-        <input matInput [value]="" readonly>
-      </mat-form-field>
-    </form>
+<div class="hero-background">
+  <div class="container mt-3 hero-details-container">
+    <h2 class="hero-title">Detalle del Héroe</h2>
 
+    @if (hero) {
+    <mat-card class="hero-details-card">
+      <mat-card-header>
+        <mat-card-title
+          ><span class="title">{{ hero.superHero }}</span></mat-card-title
+        >
+        <mat-card-subtitle
+          ><span class="title">{{ hero.alterEgo }}</span></mat-card-subtitle
+        >
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="hero-details-content">
+          <div class="hero-info">
+            <p>
+              <strong>Primera aparición:</strong> {{ hero.firstAppearance }}
+            </p>
+            <p><strong>Personajes:</strong> {{ hero.characters }}</p>
+            <p><strong>Creador:</strong> {{ hero.creator }}</p>
+          </div>
+          <div class="hero-image-container">
+            <img
+              [src]="hero.altImage"
+              alt="{{ hero.superHero }}"
+              class="hero-image"
+            />
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
     <div class="button-container">
+      <button mat-raised-button color="primary" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon> Volver
+      </button>
+    </div>
+    } @else {
+    <div class="error-message">
+      <p>Error: Héroe no encontrado</p>
+      <div class="button-container">
         <button mat-raised-button color="primary" (click)="goBack()">
           <mat-icon>arrow_back</mat-icon> Volver
         </button>
       </div>
+    </div>
+    }
   </div>
-  
+</div>

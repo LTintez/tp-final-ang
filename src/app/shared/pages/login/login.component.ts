@@ -16,10 +16,10 @@ import { LoginService } from '../../../heroes/services/login.service';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
@@ -27,12 +27,13 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private loginService: LoginService 
+    private loginService: LoginService
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
-    });[]
+      password: ['', Validators.required],
+    });
+    [];
   }
 
   ngOnInit(): void {}
@@ -49,17 +50,20 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
 
-      this.loginService.login(email, password).subscribe((isAuthenticated: boolean) => {
-        if (isAuthenticated) {
-          console.log('Inicio de sesión exitoso');
-          this.router.navigate(['/home']);
-        } else {
-          console.log('Credenciales incorrectas');
-          alert('Correo o contraseña incorrectos');
+      this.loginService.login(email, password).subscribe(
+        (isAuthenticated: boolean) => {
+          if (isAuthenticated) {
+            console.log('Inicio de sesión exitoso');
+            this.router.navigate(['/home']);
+          } else {
+            console.log('Credenciales incorrectas');
+            alert('Correo o contraseña incorrectos');
+          }
+        },
+        (error) => {
+          console.error('Error durante la autenticación:', error);
         }
-      }, error => {
-        console.error('Error durante la autenticación:', error);
-      });
+      );
     }
   }
 

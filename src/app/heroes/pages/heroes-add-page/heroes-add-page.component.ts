@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
@@ -9,7 +14,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { Router } from '@angular/router';
 import { MatListItem } from '@angular/material/list';
 import { HeroesService } from '../../services/heroes.service';
-
+import {
+  MatCard,
+  MatCardContent,
+  MatCardHeader,
+  MatCardTitle,
+} from '@angular/material/card';
 
 @Component({
   selector: 'app-heroes-add-page',
@@ -22,10 +32,14 @@ import { HeroesService } from '../../services/heroes.service';
     MatFormFieldModule,
     MatToolbarModule,
     ReactiveFormsModule,
-    MatListItem
+    MatListItem,
+    MatCardContent,
+    MatCardTitle,
+    MatCardHeader,
+    MatCard,
   ],
   templateUrl: './heroes-add-page.component.html',
-  styleUrls: ['./heroes-add-page.component.css']
+  styleUrls: ['./heroes-add-page.component.css'],
 })
 export class HeroesAddPageComponent implements OnInit {
   heroForm: FormGroup;
@@ -33,7 +47,7 @@ export class HeroesAddPageComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private heroesService: HeroesService  
+    private heroesService: HeroesService
   ) {
     this.heroForm = this.fb.group({
       superHero: ['', Validators.required],
@@ -41,7 +55,7 @@ export class HeroesAddPageComponent implements OnInit {
       firstAppearance: ['', Validators.required],
       characters: ['', Validators.required],
       creator: ['', Validators.required],
-      altImage: ['']
+      altImage: [''],
     });
   }
 
@@ -49,12 +63,12 @@ export class HeroesAddPageComponent implements OnInit {
 
   onSubmit() {
     if (this.heroForm.valid) {
-      const newHero = this.heroForm.value;      
-      
+      const newHero = this.heroForm.value;
+
       this.heroesService.addHero(newHero).subscribe(
         (response: any) => {
           console.log('Héroe agregado:', response);
-          this.heroForm.reset();           
+          this.heroForm.reset();
         },
         (error: any) => {
           console.error('Error al agregar héroe:', error);
